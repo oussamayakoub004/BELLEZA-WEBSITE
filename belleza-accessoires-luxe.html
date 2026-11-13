@@ -1,0 +1,889 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Belleza Accessoires Luxe</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;1,6..96,400;1,6..96,500&family=Jost:wght@300;400;500&family=Tajawal:wght@400;500;700&display=swap">
+<style>
+/* Layout concept: fashion-house editorial. Ivory canvas, cocoa bands, gold hairlines, Didone display type, square-edged luxe buttons, arched hero with live featured piece. */
+:root{
+  --bg:#FBF7F2; --surface:#FFFFFF; --blush:#F4E1DE; --blush-2:#F9EDEA; --beige:#EADFCF;
+  --ink:#241A1D; --muted:#76686A; --gold:#B8924A; --gold-d:#8A6420; --on-gold:#241A12;
+  --deep:#241A1D; --on-deep:#F6EBE3; --deep-muted:#C9B8B2; --line:#E7DBD0;
+  --shadow:0 18px 44px rgba(60,35,30,.12); --ok:#2F7D5B; --err:#B3392F;
+  --display:'Bodoni Moda','Amiri',Georgia,serif;
+  --body:'Jost','Tajawal',system-ui,sans-serif;
+  --dir:1;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#150F11; --surface:#1F1619; --blush:#2E2025; --blush-2:#231A1E; --beige:#2B231F;
+  --ink:#F5EBE4; --muted:#B7A6A6; --gold:#D6B36E; --gold-d:#C9A45C; --on-gold:#241A12;
+  --deep:#0C0708; --on-deep:#F5EBE4; --deep-muted:#B7A6A6; --line:#35282C;
+  --shadow:0 18px 44px rgba(0,0,0,.45); --ok:#6CC49A; --err:#F08C82; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#150F11; --surface:#1F1619; --blush:#2E2025; --blush-2:#231A1E; --beige:#2B231F;
+  --ink:#F5EBE4; --muted:#B7A6A6; --gold:#D6B36E; --gold-d:#C9A45C; --on-gold:#241A12;
+  --deep:#0C0708; --on-deep:#F5EBE4; --deep-muted:#B7A6A6; --line:#35282C;
+  --shadow:0 18px 44px rgba(0,0,0,.45); --ok:#6CC49A; --err:#F08C82; color-scheme:dark}
+:root[dir="rtl"]{--dir:-1;--display:'Amiri','Bodoni Moda',Georgia,serif;--body:'Tajawal','Jost',system-ui,sans-serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.65 var(--body);-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--deep)}
+[dir="rtl"] *{letter-spacing:0!important}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.08;margin:0;text-wrap:balance}
+p{margin:0}a{color:inherit}button{font-family:inherit}img,svg{max-width:100%}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.wrap{max-width:1280px;margin:0 auto;padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
+.eyebrow{font-size:.72rem;text-transform:uppercase;letter-spacing:.3em;color:var(--gold-d);font-weight:500;display:flex;align-items:center;gap:12px}
+.eyebrow::before{content:"";width:30px;height:1px;background:var(--gold);flex:none}
+
+/* announcement + header */
+.ann{background:var(--deep);color:var(--on-deep);text-align:center;font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;padding:9px 0;padding-top:calc(9px + env(safe-area-inset-top,0px))}
+.ann b{color:var(--gold);font-weight:500}
+.site{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+.bar{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;min-height:80px;gap:12px}
+.bar-l{display:flex;align-items:center;gap:22px}
+.bar-r{display:flex;justify-content:flex-end;gap:10px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand svg{width:44px;height:44px;flex:none}
+.brand b{display:block;font:500 1.65rem/1 var(--display);letter-spacing:.02em}
+.brand small{display:block;font-size:.6rem;letter-spacing:.42em;text-transform:uppercase;color:var(--gold-d);margin-top:5px}
+.nav{display:flex;gap:24px}
+.nav a{text-decoration:none;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;padding:6px 0;border-bottom:1px solid transparent;color:var(--muted);transition:color .2s,border-color .2s;white-space:nowrap}
+.nav a:hover,.nav a.on{color:var(--ink);border-color:var(--gold)}
+.ibtn{position:relative;display:inline-flex;align-items:center;justify-content:center;min-width:44px;height:44px;padding:0 12px;border:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer;font-size:.82rem;letter-spacing:.06em;transition:border-color .2s,background .2s}
+.ibtn:hover{border-color:var(--gold);background:var(--surface)}
+.ibtn svg{width:20px;height:20px}
+.badge-n{position:absolute;top:-7px;inset-inline-end:-7px;min-width:20px;height:20px;background:var(--gold);color:var(--on-gold);font-size:.72rem;display:grid;place-items:center;padding:0 5px;font-weight:500;border-radius:10px}
+.burger{display:none}
+@media (max-width:1060px){
+  .nav{position:absolute;inset-inline:0;top:100%;background:var(--bg);border-bottom:1px solid var(--line);flex-direction:column;gap:0;padding:6px max(18px,env(safe-area-inset-left,0px)) 14px;display:none}
+  .nav.open{display:flex}
+  .nav a{padding:14px 0;border-bottom:1px solid var(--line)}
+  .burger{display:inline-flex}
+  .brand small{display:none}
+}
+@media (max-width:420px){.brand b{font-size:1.35rem}.brand svg{width:36px;height:36px}}
+
+/* buttons (square, tracked, luxe) */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;padding:1.02rem 2rem;border-radius:0;background:var(--ink);color:var(--bg);border:1px solid var(--ink);font:500 .76rem var(--body);letter-spacing:.2em;text-transform:uppercase;cursor:pointer;text-decoration:none;transition:background .25s,color .25s,border-color .25s,transform .25s}
+.btn:hover{background:var(--gold-d);border-color:var(--gold-d);color:var(--on-gold)}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn.ghost:hover{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.btn.gold{background:var(--gold);border-color:var(--gold);color:var(--on-gold)}
+.btn.gold:hover{background:transparent;color:var(--gold)}
+.btn.sm{padding:.78rem 1rem;font-size:.7rem;width:100%;background:transparent;color:var(--ink);border-color:var(--line)}
+.btn.sm:hover{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+
+/* hero */
+.hero{background:radial-gradient(900px 520px at 85% 10%,var(--blush) 0,transparent 62%),linear-gradient(180deg,var(--blush-2),var(--bg));overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(24px,5vw,70px);align-items:center;padding-block:clamp(36px,6vw,84px)}
+.hero h1{margin-top:22px}
+.hero h1 i{display:block;font-size:clamp(1.25rem,2.4vw,1.8rem);font-weight:400;color:var(--gold-d);margin-bottom:6px}
+.hero h1 em{display:block;font-style:normal;font-weight:400;font-size:clamp(3rem,8.4vw,7rem);letter-spacing:-.01em;line-height:.98}
+.hero h1 em span{font-style:italic;color:var(--gold-d)}
+.hero p.sub{margin-top:24px;max-width:44ch;color:var(--muted);font-size:1.08rem;font-weight:300}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.perks{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:38px;padding-top:22px;border-top:1px solid var(--line);color:var(--muted);font-size:.84rem;max-width:520px}
+.perks span{display:inline-flex;align-items:center;gap:9px}
+.perks i{width:6px;height:6px;background:var(--gold);transform:rotate(45deg);display:inline-block}
+.hv{position:relative;width:100%;max-width:540px;margin-inline:auto;aspect-ratio:1/1.12}
+.hv>*{position:absolute}
+.h-frame{inset-inline-start:calc(13% - 16px);top:-16px;width:70%;height:92%;border:1px solid var(--gold);border-radius:999px 999px 0 0}
+.h-arch{inset-inline-start:13%;top:0;width:70%;height:92%;border-radius:999px 999px 0 0;overflow:hidden;box-shadow:var(--shadow)}
+.hv svg.art{width:100%;height:100%;display:block}
+.h-badge{bottom:0;inset-inline-start:0;width:30%;aspect-ratio:1;border-radius:50%;box-shadow:var(--shadow);background:var(--surface)}
+.h-badge svg{width:100%;height:100%;display:block}
+.spin{transform-box:fill-box;transform-origin:center;animation:spin 26s linear infinite}
+.h-feat{bottom:6%;inset-inline-end:0;width:50%;background:var(--surface);padding:10px;display:grid;grid-template-columns:62px 1fr;gap:12px;align-items:center;box-shadow:var(--shadow);border:1px solid var(--line)}
+.h-feat .ft{width:62px;height:62px;overflow:hidden}
+.h-feat .ft svg{width:100%;height:100%;display:block}
+.h-feat small{display:block;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-d)}
+.h-feat b{display:block;font:500 1rem/1.2 var(--display)}
+.h-feat button{margin-top:4px;border:0;background:none;color:var(--ink);font-size:.78rem;padding:0;cursor:pointer;border-bottom:1px solid var(--gold);font-weight:500}
+@media (max-width:860px){.hero .wrap{grid-template-columns:1fr}.hv{max-width:400px}.h-feat{grid-template-columns:48px 1fr;width:56%}.h-feat .ft{width:48px;height:48px}}
+
+/* marquee */
+.marq{background:var(--deep);color:var(--on-deep);overflow:hidden;border-block:1px solid var(--gold)}
+.marq div{display:flex;width:max-content;animation:marq 38s linear infinite}
+.marq span{padding:16px 26px;font:400 italic 1.35rem/1 var(--display);white-space:nowrap;display:flex;align-items:center;gap:52px}
+.marq span::after{content:"";width:8px;height:8px;background:var(--gold);transform:rotate(45deg);flex:none}
+
+/* sections */
+.sec{padding-block:clamp(48px,7vw,96px)}
+.head{display:flex;align-items:end;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-bottom:34px}
+.head h2{font-size:clamp(2rem,4.6vw,3.4rem);margin-top:14px}
+.head p{color:var(--muted);max-width:50ch;margin-top:10px;font-weight:300}
+.link{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:3px;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase}
+.cats{display:grid;grid-template-columns:1.2fr 1fr 1fr;grid-auto-rows:clamp(170px,24vw,290px);gap:14px}
+.cat{position:relative;overflow:hidden;display:block;text-decoration:none;color:#fff;isolation:isolate}
+.cat:first-child{grid-row:span 2}
+.cat svg{width:100%;height:100%;display:block;transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+.cat:hover svg{transform:scale(1.06)}
+.cat::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(30,18,20,.62));z-index:1}
+.cat span{position:absolute;z-index:2;inset-inline:18px;bottom:16px;display:flex;justify-content:space-between;align-items:end;font:400 1.55rem/1.1 var(--display);border-top:1px solid rgba(255,255,255,.55);padding-top:10px}
+.cat span i{font:400 .72rem var(--body);letter-spacing:.2em;text-transform:uppercase;opacity:.9}
+@media (max-width:760px){.cats{grid-template-columns:1fr 1fr}.cat:first-child{grid-column:span 2;grid-row:span 1}}
+
+/* products */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,250px),1fr));gap:30px 20px}
+@media (max-width:560px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 12px}}
+.card{display:flex;flex-direction:column;animation:rise .7s both}
+.thumb{position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--blush);cursor:pointer;border:0;padding:0;display:block;width:100%}
+.thumb svg{width:100%;height:100%;display:block;transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+.card:hover .thumb svg{transform:scale(1.07)}
+.tag{position:absolute;top:12px;inset-inline-start:12px;background:var(--bg);color:var(--ink);font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;padding:5px 10px;font-weight:500}
+.tag.sale{background:var(--gold);color:var(--on-gold)}
+.heart{position:absolute;top:10px;inset-inline-end:10px;width:38px;height:38px;border-radius:50%;border:0;background:var(--bg);color:var(--ink);display:grid;place-items:center;cursor:pointer;z-index:2;transition:transform .2s}
+.heart:hover{transform:scale(1.1)}
+.heart svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.6;transition:none!important;transform:none!important}
+.heart.on svg{fill:var(--gold);stroke:var(--gold)}
+.qvbtn{position:absolute;inset-inline:12px;bottom:12px;background:var(--bg);color:var(--ink);font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;text-align:center;padding:10px;font-weight:500;opacity:0;transform:translateY(8px);transition:all .3s;pointer-events:none}
+@media (hover:hover){.card:hover .qvbtn{opacity:1;transform:none}}
+.cbody{padding:14px 2px 0;display:flex;flex-direction:column;gap:5px;flex:1;min-width:0}
+.cbody h3{font-size:1.28rem;font-weight:500}
+.cbody p{font-size:.86rem;color:var(--muted);line-height:1.5;flex:1;font-weight:300}
+.price{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin:4px 0 10px;font-variant-numeric:tabular-nums}
+.price b{font-weight:500;font-size:1.02rem}
+.price s{color:var(--muted);font-size:.84rem}
+
+/* promise + offer bands */
+.deep{background:var(--deep);color:var(--on-deep)}
+.deep .eyebrow{color:var(--gold)}
+.pro{display:grid;grid-template-columns:1fr 2fr;gap:clamp(24px,5vw,72px);align-items:start}
+.pro h2{font-size:clamp(2.1rem,4.4vw,3.4rem);margin-top:14px}
+.pro h2 em{font-style:italic;color:var(--gold)}
+.pcols{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.pcol{border-top:1px solid var(--gold);padding-top:18px}
+.pcol svg{width:34px;height:34px;color:var(--gold);margin-bottom:14px}
+.pcol h3{font-size:1.4rem;margin-bottom:8px}
+.pcol p{color:var(--deep-muted);font-size:.94rem;font-weight:300}
+@media (max-width:900px){.pro{grid-template-columns:1fr}.pcols{grid-template-columns:1fr}}
+.offer{border:1px solid var(--gold);padding:clamp(28px,6vw,70px);display:grid;grid-template-columns:1fr auto;gap:26px;align-items:center;position:relative;background:linear-gradient(120deg,var(--blush-2),var(--beige))}
+.offer::before{content:"";position:absolute;inset:10px;border:1px solid var(--line);pointer-events:none}
+.offer h2{font-size:clamp(1.9rem,4.2vw,3.2rem);margin:14px 0 10px;position:relative}
+.offer p{color:var(--muted);max-width:50ch;position:relative;font-weight:300}
+.offer .eyebrow,.offer .btn{position:relative}
+@media (max-width:720px){.offer{grid-template-columns:1fr}}
+
+/* inner pages */
+.pagehead{background:var(--blush-2);padding-block:clamp(40px,7vw,86px);border-bottom:1px solid var(--line);text-align:center}
+.pagehead .eyebrow{justify-content:center}
+.pagehead .eyebrow::after{content:"";width:30px;height:1px;background:var(--gold)}
+.pagehead h1{font-size:clamp(2.4rem,6vw,4.6rem);margin-top:16px;font-style:italic}
+.pagehead p{color:var(--muted);margin:14px auto 0;max-width:56ch;font-weight:300}
+.tools{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:14px;margin-bottom:18px}
+@media (max-width:700px){.tools{grid-template-columns:1fr}}
+.field{display:flex;flex-direction:column;gap:6px;min-width:0}
+.field label{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+input,select,textarea{width:100%;font:400 1rem var(--body);color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:0;padding:13px 14px;min-width:0}
+textarea{resize:vertical;min-height:110px}
+input:focus,select:focus,textarea:focus{outline:1px solid var(--gold);outline-offset:0;border-color:var(--gold)}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:2px 0 16px;margin-bottom:6px;scrollbar-width:thin}
+.chip{flex:none;border:1px solid var(--line);background:transparent;color:var(--ink);padding:9px 18px;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;transition:all .2s}
+.chip:hover{border-color:var(--gold)}
+.chip.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.count{color:var(--muted);font-size:.86rem;margin-bottom:20px}
+.empty{text-align:center;padding:56px 16px;color:var(--muted);display:flex;flex-direction:column;gap:16px;align-items:center}
+.empty h3{font-size:1.8rem;color:var(--ink);font-style:italic}
+
+/* drawer */
+.veil{position:fixed;inset:0;background:rgba(20,10,12,.55);opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s;z-index:50}
+.drawer{position:fixed;top:0;bottom:0;inset-inline-end:0;width:min(440px,100vw);background:var(--bg);z-index:60;display:flex;flex-direction:column;transform:translateX(calc(104% * var(--dir)));visibility:hidden;transition:transform .4s cubic-bezier(.2,.7,.2,1),visibility .4s;box-shadow:var(--shadow);padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+.cart-open .veil{opacity:1;visibility:visible}
+.cart-open .drawer{transform:none;visibility:visible}
+.dh{display:flex;align-items:center;justify-content:space-between;padding:20px 22px;border-bottom:1px solid var(--line)}
+.dh h2{font-size:1.9rem;font-style:italic}
+.dl{flex:1;overflow-y:auto;padding:6px 22px}
+.line{display:grid;grid-template-columns:70px 1fr auto;gap:14px;padding:16px 0;border-bottom:1px solid var(--line);align-items:center}
+.line .t{width:70px;height:88px;overflow:hidden}
+.line .t svg{width:100%;height:100%;display:block}
+.line h4{margin:0;font:500 1.12rem var(--display)}
+.line small{color:var(--muted);font-variant-numeric:tabular-nums}
+.qty{display:inline-flex;align-items:center;border:1px solid var(--line);margin-top:8px}
+.qty button{width:32px;height:32px;border:0;background:transparent;color:var(--ink);cursor:pointer;font-size:1.1rem}
+.qty button:hover{background:var(--blush)}
+.qty span{min-width:26px;text-align:center;font-variant-numeric:tabular-nums}
+.rm{border:0;background:transparent;color:var(--muted);cursor:pointer;font-size:.8rem;text-decoration:underline;padding:4px}
+.df{padding:18px 22px 22px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:8px}
+.row{display:flex;justify-content:space-between;gap:12px;font-variant-numeric:tabular-nums;color:var(--muted);font-size:.94rem}
+.row.tot{color:var(--ink);font-size:1.15rem;padding-top:10px;border-top:1px solid var(--gold)}
+.row.tot b{font-weight:500}
+
+/* quick view */
+.qv{position:fixed;inset:0;z-index:70;display:grid;place-items:center;padding:16px}
+.qv-back{position:absolute;inset:0;background:rgba(20,10,12,.6)}
+.qv-box{position:relative;background:var(--bg);width:min(920px,100%);max-height:calc(100vh - 32px);overflow:auto;display:grid;grid-template-columns:1fr 1fr;box-shadow:var(--shadow)}
+.qv-art{aspect-ratio:4/5;min-height:100%;background:var(--blush);overflow:hidden}
+.qv-art svg{width:100%;height:100%;display:block}
+.qv-info{padding:clamp(22px,4vw,44px);display:flex;flex-direction:column;gap:14px;justify-content:center}
+.qv-info h2{font-size:clamp(1.9rem,3.4vw,2.6rem)}
+.qv-info p{color:var(--muted);font-weight:300}
+.qvrow{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:6px}
+.qvrow .qty{margin:0}
+.qvnote{font-size:.84rem;color:var(--muted);border-top:1px solid var(--line);padding-top:14px}
+.qv-x{position:absolute;top:10px;inset-inline-end:10px;z-index:3;background:var(--bg)}
+@media (max-width:700px){.qv-box{grid-template-columns:1fr}.qv-art{aspect-ratio:1;min-height:0}}
+
+/* forms & content */
+.two{display:grid;grid-template-columns:1.15fr .85fr;gap:30px;align-items:start}
+@media (max-width:860px){.two{grid-template-columns:1fr}}
+.panel{background:var(--surface);border:1px solid var(--line);padding:clamp(20px,3.4vw,36px)}
+.panel h2{font-size:1.9rem;margin-bottom:18px;font-style:italic}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.fgrid .full{grid-column:1/-1}
+@media (max-width:560px){.fgrid{grid-template-columns:1fr}}
+.err{color:var(--err);font-size:.82rem;min-height:1.1em}
+.bad{border-color:var(--err)}
+.note{margin-top:14px;padding:12px 14px;background:var(--blush-2);color:var(--muted);font-size:.9rem;border-inline-start:2px solid var(--gold)}
+.note.ok{color:var(--ink);border-inline-start-color:var(--ok)}
+.sum .row{padding:6px 0}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,72px);align-items:center}
+@media (max-width:820px){.about{grid-template-columns:1fr}}
+.about p{color:var(--muted);margin-bottom:16px;font-size:1.08rem;font-weight:300}
+.about p:first-child::first-letter{font:400 3.6rem/.9 var(--display);float:inline-start;margin-inline-end:10px;color:var(--gold-d)}
+.vals{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:56px}
+@media (max-width:760px){.vals{grid-template-columns:1fr}}
+.val{padding-top:18px;border-top:1px solid var(--gold)}
+.val h3{font-size:1.6rem;margin-bottom:8px;font-style:italic}
+.val p{color:var(--muted);font-size:.96rem;font-weight:300}
+.info{display:flex;flex-direction:column;gap:22px}
+.info div small{display:block;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:2px}
+.info div span{font-size:1.15rem;word-break:break-word;font-variant-numeric:tabular-nums}
+.pol{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+@media (max-width:760px){.pol{grid-template-columns:1fr}}
+.pol ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:14px;color:var(--muted);font-weight:300}
+.pol li{display:flex;gap:12px}
+.pol li::before{content:"";flex:none;width:7px;height:7px;margin-top:.65em;background:var(--gold);transform:rotate(45deg)}
+.soc{display:flex;gap:10px;margin-top:6px}
+.soc a{width:44px;height:44px;border:1px solid var(--line);display:grid;place-items:center;color:inherit;transition:all .25s}
+.soc a:hover{border-color:var(--gold);color:var(--gold)}
+.soc svg{width:20px;height:20px}
+
+/* footer */
+footer{background:var(--deep);color:var(--on-deep);padding-block:64px 30px;margin-top:0;border-top:1px solid var(--gold)}
+.fg{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:34px}
+@media (max-width:760px){.fg{grid-template-columns:1fr}}
+footer h4{margin:0 0 14px;font:400 .72rem var(--body);letter-spacing:.3em;text-transform:uppercase;color:var(--gold)}
+footer ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px}
+footer li a{text-decoration:none;color:var(--deep-muted)}
+footer li a:hover{color:var(--on-deep)}
+footer .brand b{color:var(--on-deep)}
+footer .soc a{border-color:rgba(255,255,255,.2)}
+.copy{margin-top:40px;padding-top:20px;border-top:1px solid rgba(255,255,255,.14);color:var(--deep-muted);font-size:.84rem}
+.toast{position:fixed;left:50%;bottom:calc(22px + env(safe-area-inset-bottom,0px));transform:translate(-50%,30px);background:var(--deep);color:var(--on-deep);border:1px solid var(--gold);padding:13px 22px;font-size:.82rem;letter-spacing:.1em;opacity:0;visibility:hidden;transition:all .3s;z-index:90;max-width:calc(100vw - 32px)}
+.toast.show{opacity:1;visibility:visible;transform:translate(-50%,0)}
+@keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes marq{to{transform:translateX(calc(-50% * var(--dir)))}}
+.rise{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+.d1{animation-delay:.1s}.d2{animation-delay:.2s}.d3{animation-delay:.3s}.d4{animation-delay:.4s}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+
+<div class="ann" id="annT"></div>
+<header class="site">
+  <div class="wrap bar">
+    <div class="bar-l">
+      <button class="ibtn burger" id="burger" type="button" data-i18n-aria="menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 8h16M4 16h16"/></svg>
+      </button>
+      <nav class="nav" id="nav">
+        <a href="#home" data-nav="home" data-i18n="nav_home"></a>
+        <a href="#shop" data-nav="shop" data-i18n="nav_shop"></a>
+        <a href="#about" data-nav="about" data-i18n="nav_about"></a>
+        <a href="#contact" data-nav="contact" data-i18n="nav_contact"></a>
+        <a href="#delivery" data-nav="delivery" data-i18n="nav_delivery"></a>
+      </nav>
+    </div>
+    <a class="brand" href="#home" aria-label="Belleza Accessoires">
+      <span id="logo1"></span>
+      <span><b>Belleza</b><small>Accessoires</small></span>
+    </a>
+    <div class="bar-r">
+      <button class="ibtn" id="langBtn" type="button"></button>
+      <button class="ibtn" id="cartBtn" type="button" data-i18n-aria="cart">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.2 11.2a1.5 1.5 0 0 1-1.5 1.3H7.7a1.5 1.5 0 0 1-1.5-1.3z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>
+        <span class="badge-n" id="cartCount">0</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- HOME -->
+<section data-page="home">
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <div class="eyebrow rise" data-i18n="hero_kicker"></div>
+        <h1 class="rise d1"><i data-i18n="hero_hi"></i><em>Belleza <span>Accessoires</span></em></h1>
+        <p class="sub rise d2" data-i18n="hero_sub"></p>
+        <div class="cta rise d3">
+          <a class="btn" href="#shop" data-i18n="shop_now"></a>
+          <a class="btn ghost" href="#shop" data-go="new" data-i18n="discover"></a>
+        </div>
+        <div class="perks rise d4">
+          <span><i></i><span data-i18n="perk1"></span></span>
+          <span><i></i><span data-i18n="perk2"></span></span>
+          <span><i></i><span data-i18n="perk3"></span></span>
+        </div>
+      </div>
+      <div class="hv rise d2" id="collage"></div>
+    </div>
+  </div>
+  <div class="marq" aria-hidden="true"><div id="marq"></div></div>
+
+  <div class="sec wrap">
+    <div class="head"><div><div class="eyebrow" data-i18n="cat_k"></div><h2 data-i18n="cat_title"></h2><p data-i18n="cat_sub"></p></div></div>
+    <div class="cats" id="cats"></div>
+  </div>
+
+  <div class="wrap" style="padding-bottom:clamp(48px,7vw,96px)">
+    <div class="head"><div><div class="eyebrow" data-i18n="new_k"></div><h2 data-i18n="new_title"></h2></div><a class="link" href="#shop" data-go="new" data-i18n="see_all"></a></div>
+    <div class="grid" id="gridNew"></div>
+  </div>
+
+  <div class="deep"><div class="wrap sec">
+    <div class="pro">
+      <div><div class="eyebrow" data-i18n="pr_k"></div><h2 data-i18n-html="pr_t"></h2></div>
+      <div class="pcols">
+        <div class="pcol"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"><path d="M16 4l9 9-9 15-9-15z"/><path d="M7 13h18M16 4l-3.5 9L16 28l3.5-15z"/></svg><h3 data-i18n="p1t"></h3><p data-i18n="p1d"></p></div>
+        <div class="pcol"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round"><path d="M3 9h16v13H3zM19 13h5l5 4v5H19z"/><circle cx="9" cy="23" r="2.5"/><circle cx="23.5" cy="23" r="2.5"/></svg><h3 data-i18n="p2t"></h3><p data-i18n="p2d"></p></div>
+        <div class="pcol"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round"><path d="M5 12h22v14H5zM3 8h26v4H3zM16 8v18"/><path d="M16 8c-3-5-8-4-7 0M16 8c3-5 8-4 7 0"/></svg><h3 data-i18n="p3t"></h3><p id="p3d"></p></div>
+      </div>
+    </div>
+  </div></div>
+
+  <div class="sec wrap">
+    <div class="head"><div><div class="eyebrow" data-i18n="best_k"></div><h2 data-i18n="best_title"></h2></div><a class="link" href="#shop" data-go="best" data-i18n="see_all"></a></div>
+    <div class="grid" id="gridBest"></div>
+  </div>
+
+  <div class="wrap" style="padding-bottom:clamp(48px,7vw,96px)">
+    <div class="offer">
+      <div><div class="eyebrow" data-i18n="offer_k"></div><h2 id="offerT"></h2><p data-i18n="offer_s"></p></div>
+      <a class="btn" href="#shop" data-i18n="offer_b"></a>
+    </div>
+  </div>
+</section>
+
+<!-- SHOP -->
+<section data-page="shop" hidden>
+  <div class="pagehead"><div class="wrap"><div class="eyebrow">Belleza Accessoires</div><h1 data-i18n="shop_title"></h1><p data-i18n="shop_sub"></p></div></div>
+  <div class="sec wrap" style="padding-top:36px">
+    <div class="tools">
+      <div class="field"><label for="q" data-i18n="search_lbl"></label><input id="q" type="search" data-i18n-ph="search_ph" autocomplete="off"></div>
+      <div class="field"><label for="price" data-i18n="price_lbl"></label>
+        <select id="price"><option value="0" data-i18n="price_all"></option><option value="1" data-i18n="price_1"></option><option value="2" data-i18n="price_2"></option><option value="3" data-i18n="price_3"></option><option value="4" data-i18n="price_4"></option></select></div>
+      <div class="field"><label for="sort" data-i18n="sort_lbl"></label>
+        <select id="sort"><option value="feat" data-i18n="sort_feat"></option><option value="low" data-i18n="sort_low"></option><option value="high" data-i18n="sort_high"></option></select></div>
+    </div>
+    <div class="chips" id="chips" role="group"></div>
+    <div class="count" id="resCount" aria-live="polite"></div>
+    <div class="grid" id="gridShop"></div>
+    <div class="empty" id="shopEmpty" hidden><h3 data-i18n="empty_t"></h3><button class="btn ghost" id="clearF" type="button" data-i18n="empty_b"></button></div>
+  </div>
+</section>
+
+<!-- CHECKOUT -->
+<section data-page="checkout" hidden>
+  <div class="pagehead"><div class="wrap"><div class="eyebrow">Belleza Accessoires</div><h1 data-i18n="co_t"></h1><p data-i18n="co_sub"></p></div></div>
+  <div class="sec wrap" style="padding-top:36px">
+    <div class="two">
+      <form class="panel" id="coForm" novalidate>
+        <h2 data-i18n="co_form"></h2>
+        <div class="fgrid">
+          <div class="field"><label for="fName" data-i18n="f_name"></label><input id="fName" autocomplete="name"><div class="err" data-err="fName"></div></div>
+          <div class="field"><label for="fPhone" data-i18n="f_phone"></label><input id="fPhone" type="tel" inputmode="tel" autocomplete="tel" placeholder="0555 12 34 56"><div class="err" data-err="fPhone"></div></div>
+          <div class="field"><label for="fWilaya" data-i18n="f_wilaya"></label><select id="fWilaya"></select><div class="err" data-err="fWilaya"></div></div>
+          <div class="field"><label for="fAddr" data-i18n="f_addr"></label><input id="fAddr" autocomplete="street-address"><div class="err" data-err="fAddr"></div></div>
+          <div class="field full"><label for="fNote" data-i18n="f_note"></label><textarea id="fNote" style="min-height:80px"></textarea></div>
+        </div>
+        <div class="err" id="cartErr" style="margin-top:10px"></div>
+        <div style="margin-top:12px"><a class="btn gold" id="waBtn" href="#checkout" target="_blank" rel="noopener noreferrer" style="width:100%" data-i18n="send_wa"></a></div>
+        <div class="note" data-i18n="wa_hint"></div>
+        <div class="note ok" id="sentNote" hidden><span data-i18n="sent_note"></span> <button class="rm" id="clearCart" type="button" data-i18n="clear_cart"></button></div>
+      </form>
+      <aside class="panel sum"><h2 data-i18n="co_summary"></h2><div id="coSum"></div></aside>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section data-page="about" hidden>
+  <div class="pagehead"><div class="wrap"><div class="eyebrow">Belleza Accessoires</div><h1 data-i18n="ab_t"></h1></div></div>
+  <div class="sec wrap">
+    <div class="about">
+      <div><p data-i18n="ab_p1"></p><p data-i18n="ab_p2"></p><p data-i18n="ab_p3"></p></div>
+      <div class="hv" id="aboutArt" style="max-width:440px"></div>
+    </div>
+    <div class="vals">
+      <div class="val"><h3 data-i18n="v1t"></h3><p data-i18n="v1d"></p></div>
+      <div class="val"><h3 data-i18n="v2t"></h3><p data-i18n="v2d"></p></div>
+      <div class="val"><h3 data-i18n="v3t"></h3><p data-i18n="v3d"></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section data-page="contact" hidden>
+  <div class="pagehead"><div class="wrap"><div class="eyebrow">Belleza Accessoires</div><h1 data-i18n="ct_t"></h1><p data-i18n="ct_sub"></p></div></div>
+  <div class="sec wrap" style="padding-top:36px">
+    <div class="two">
+      <form class="panel" id="ctForm" novalidate>
+        <h2 data-i18n="ct_form"></h2>
+        <div class="fgrid">
+          <div class="field full"><label for="cName" data-i18n="f_name"></label><input id="cName" autocomplete="name"><div class="err" data-err="cName"></div></div>
+          <div class="field full"><label for="cMsg" data-i18n="f_msg"></label><textarea id="cMsg"></textarea><div class="err" data-err="cMsg"></div></div>
+        </div>
+        <div style="margin-top:14px"><a class="btn gold" id="ctBtn" href="#contact" target="_blank" rel="noopener noreferrer" style="width:100%" data-i18n="ct_send"></a></div>
+      </form>
+      <aside class="panel info">
+        <div><small data-i18n="ct_wa"></small><span id="waShow"></span></div>
+        <div><small data-i18n="ct_email"></small><span id="mailShow"></span></div>
+        <div><small data-i18n="ct_social"></small><div class="soc" id="socContact"></div></div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- DELIVERY -->
+<section data-page="delivery" hidden>
+  <div class="pagehead"><div class="wrap"><div class="eyebrow">Belleza Accessoires</div><h1 data-i18n="pol_t"></h1><p data-i18n="pol_sub"></p></div></div>
+  <div class="sec wrap">
+    <div class="pol">
+      <div class="panel"><h2 data-i18n="pol_d_t"></h2><ul id="polD"></ul></div>
+      <div class="panel"><h2 data-i18n="pol_x_t"></h2><ul id="polX"></ul></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fg">
+      <div>
+        <a class="brand" href="#home"><span id="logo2"></span><span><b>Belleza</b><small>Accessoires</small></span></a>
+        <p style="color:var(--deep-muted);margin-top:16px;max-width:38ch;font-weight:300" data-i18n="ft_tag"></p>
+      </div>
+      <div><h4 data-i18n="ft_links"></h4>
+        <ul><li><a href="#shop" data-i18n="nav_shop"></a></li><li><a href="#about" data-i18n="nav_about"></a></li><li><a href="#contact" data-i18n="nav_contact"></a></li><li><a href="#delivery" data-i18n="nav_delivery"></a></li></ul></div>
+      <div><h4 data-i18n="ft_follow"></h4><div class="soc" id="socFoot"></div></div>
+    </div>
+    <div class="copy">© <span id="yr"></span> Belleza Accessoires. <span data-i18n="ft_rights"></span></div>
+  </div>
+</footer>
+
+<div class="veil" id="veil"></div>
+<aside class="drawer" id="drawer" aria-hidden="true" aria-label="Cart">
+  <div class="dh"><h2 data-i18n="cart_t"></h2><button class="ibtn" id="closeCart" type="button" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+  <div class="dl" id="dl"></div>
+  <div class="df" id="df"></div>
+</aside>
+<div class="qv" id="qv" hidden role="dialog" aria-modal="true">
+  <div class="qv-back" data-qvclose></div>
+  <div class="qv-box"><button class="ibtn qv-x" id="qvClose" type="button" data-qvclose aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button><div id="qvBody" style="display:contents"></div></div>
+</div>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+
+/* ============ SETTINGS: edit these to make the store yours ============ */
+const CONFIG={
+  whatsapp:'213555000000',            // order number, digits only with country code (replace this!)
+  whatsappShow:'+213 555 00 00 00',
+  email:'contact@belleza-accessoires.com',
+  instagram:'https://www.instagram.com/belleza.accessoires',
+  facebook:'https://www.facebook.com/belleza.accessoires',
+  tiktok:'https://www.tiktok.com/@belleza.accessoires',
+  deliveryFee:600,                    // DA
+  freeOver:10000,                     // DA
+  exchangeDays:7,
+  defaultLang:'ar'                    // 'ar' or 'en'
+};
+
+/* ============ Translations ============ */
+const STR={
+en:{cur:'DA',lang_btn:'العربية',ann:'Free delivery on orders over {free}',
+c_fav:'Favorites',view:'Quick view',fav_t:'Save to favorites',
+pr_k:'The Belleza promise',pr_t:'Luxury, <em>within reach</em>',
+p1t:'Curated with care',p1d:'Every piece is chosen for its finish, comfort and shine.',
+p2t:'Delivered nationwide',p2d:'We ship to all 58 wilayas and confirm every order on WhatsApp.',
+p3t:'Easy exchange',p3d:'Change your mind within {days} days. Simple and clear.',
+hero_feat:'Featured piece',qv_cat:'Category',
+nav_home:'Home',nav_shop:'Shop',nav_about:'About us',nav_contact:'Contact',nav_delivery:'Delivery & exchange',
+cart:'Open cart',menu:'Menu',
+hero_kicker:'Winter collection 2026',hero_hi:'Welcome to',
+hero_sub:'Jewelry, bags, watches and the small details that make every look yours.',
+shop_now:'Shop now',discover:'Discover products',
+perk1:'Gift-ready packaging',perk2:'Delivery to all wilayas',perk3:'Easy exchange',
+cat_k:'Collections',cat_title:'Shop by category',cat_sub:'Everything for the woman who loves a finishing touch.',
+new_k:'Just in',new_title:'Latest arrivals',best_k:'Loved most',best_title:'Best sellers',see_all:'See all',
+offer_k:'Offer',offer_t:'Free delivery on orders over {free}',offer_s:'Choose your favorite pieces and we bring them to your door.',offer_b:'Start shopping',
+shop_title:'Our products',shop_sub:'Search, filter by type or price, and add your favorites to the cart.',
+search_lbl:'Search',search_ph:'Search for a product…',price_lbl:'Price',price_all:'All prices',
+price_1:'Under 3,000 DA',price_2:'3,000 – 6,000 DA',price_3:'6,000 – 10,000 DA',price_4:'Over 10,000 DA',
+sort_lbl:'Sort by',sort_feat:'Featured',sort_low:'Price: low to high',sort_high:'Price: high to low',
+results:'{n} products',empty_t:'No products match your search.',empty_b:'Clear filters',
+add:'Add to cart',added:'Added to cart',b_new:'New',b_best:'Best seller',
+c_all:'All',c_acc:'Women’s accessories',c_bag:'Bags',c_jew:'Jewelry',c_wat:'Watches',c_bea:'Beauty',c_new:'Latest',c_best:'Best sellers',
+cart_t:'Your cart',cart_empty:'Your cart is empty.',cont:'Continue shopping',subtotal:'Subtotal',delivery:'Delivery',free:'Free',total:'Total',
+checkout_btn:'Complete order',remove:'Remove',
+co_t:'Complete your order',co_sub:'Fill in your details and send the order to us on WhatsApp.',co_form:'Delivery details',
+f_name:'Full name',f_phone:'Phone number',f_wilaya:'Wilaya',f_addr:'Address',f_note:'Notes (optional)',wilaya_ph:'Choose your wilaya',
+send_wa:'Send order via WhatsApp',wa_hint:'WhatsApp opens with your order ready to send. We confirm it with you before shipping.',
+co_summary:'Order summary',err_req:'Please fill in this field.',err_phone:'Enter a valid number, for example 0555 12 34 56.',err_cart:'Add items to your cart first.',
+sent_note:'If WhatsApp opened, send the message there to confirm your order.',clear_cart:'Clear my cart',
+ab_t:'Our story',
+ab_p1:'Belleza Accessoires began with a simple idea: the right detail changes everything. A pearl at the ear, a slim watch on the wrist, a bag that fits the day.',
+ab_p2:'We choose pieces in soft blush, ivory, beige and gold. They are easy to wear and made to be noticed without shouting.',
+ab_p3:'Every order is checked and wrapped before it leaves, so it arrives ready to wear or ready to give.',
+v1t:'Chosen with care',v1d:'Each piece is picked for its finish, comfort and how well it goes with the rest.',
+v2t:'Fair prices',v2d:'Elegant style should not feel out of reach.',
+v3t:'Close to you',v3d:'We answer on WhatsApp and Instagram and follow every order until it reaches you.',
+ct_t:'Contact us',ct_sub:'Questions about a piece or an order? Write to us, we are happy to help.',ct_form:'Send us a message',
+f_msg:'Your message',ct_send:'Send on WhatsApp',ct_wa:'WhatsApp',ct_email:'Email',ct_social:'Follow us',
+pol_t:'Delivery & exchange',pol_sub:'Clear and simple, so you can order with confidence.',pol_d_t:'Delivery',pol_x_t:'Exchange',
+d1:'We deliver to all 58 wilayas.',d2:'Delivery fee: {fee}. Free for orders over {free}.',
+d3:'Delivery usually takes 24 to 72 hours in nearby wilayas and 3 to 7 days elsewhere.',
+d4:'We confirm your order with you on WhatsApp before shipping. You pay on delivery.',
+x1:'You can request an exchange within {days} days of receiving your order.',
+x2:'Items must be unused, in their original condition and packaging.',
+x3:'Beauty products and earrings cannot be exchanged, for hygiene reasons.',
+x4:'To start, message us on WhatsApp with your order details and a photo of the item.',
+ft_tag:'Jewelry, bags, watches and beauty with a soft, golden touch.',ft_links:'Explore',ft_follow:'Follow us',ft_rights:'All rights reserved.',
+wa_head:'New order from Belleza Accessoires',wa_name:'Name',wa_phone:'Phone',wa_wilaya:'Wilaya',wa_addr:'Address',wa_items:'Items',wa_sub:'Subtotal',wa_del:'Delivery',wa_total:'Total',wa_note:'Notes',
+wa_ct:'Message from the Belleza Accessoires website'},
+ar:{cur:'دج',lang_btn:'English',ann:'توصيل مجاني للطلبات فوق {free}',
+c_fav:'المفضلة',view:'معاينة سريعة',fav_t:'أضيفي إلى المفضلة',
+pr_k:'وعد Belleza',pr_t:'الفخامة <em>في متناول يدكِ</em>',
+p1t:'اختيار بعناية',p1d:'نختار كل قطعة لجودة تشطيبها وراحتها ولمعانها.',
+p2t:'توصيل لكل الولايات',p2d:'نشحن إلى الولايات الـ 58 ونؤكد كل طلب عبر WhatsApp.',
+p3t:'استبدال سهل',p3d:'غيّري رأيكِ خلال {days} أيام. بكل بساطة ووضوح.',
+hero_feat:'قطعة مميزة',qv_cat:'القسم',
+nav_home:'الرئيسية',nav_shop:'المتجر',nav_about:'من نحن',nav_contact:'اتصل بنا',nav_delivery:'التوصيل والاستبدال',
+cart:'فتح السلة',menu:'القائمة',
+hero_kicker:'تشكيلة الشتاء 2026',hero_hi:'مرحبًا بكِ في',
+hero_sub:'مجوهرات وحقائب وساعات وتفاصيل صغيرة تمنح كل إطلالة طابعكِ الخاص.',
+shop_now:'تسوّقي الآن',discover:'اكتشفي المنتجات',
+perk1:'تغليف جاهز للإهداء',perk2:'توصيل لجميع الولايات',perk3:'استبدال سهل',
+cat_k:'التشكيلات',cat_title:'تسوّقي حسب القسم',cat_sub:'كل ما تحتاجه المرأة التي تعشق اللمسة الأخيرة.',
+new_k:'وصل حديثًا',new_title:'أحدث المنتجات',best_k:'الأكثر حبًّا',best_title:'الأكثر مبيعًا',see_all:'عرض الكل',
+offer_k:'عرض',offer_t:'توصيل مجاني للطلبات فوق {free}',offer_s:'اختاري قطعكِ المفضلة ونوصلها إلى باب بيتكِ.',offer_b:'ابدئي التسوق',
+shop_title:'منتجاتنا',shop_sub:'ابحثي، وصفّي حسب النوع أو السعر، وأضيفي ما يعجبكِ إلى السلة.',
+search_lbl:'بحث',search_ph:'ابحثي عن منتج…',price_lbl:'السعر',price_all:'كل الأسعار',
+price_1:'أقل من 3,000 دج',price_2:'3,000 – 6,000 دج',price_3:'6,000 – 10,000 دج',price_4:'أكثر من 10,000 دج',
+sort_lbl:'ترتيب حسب',sort_feat:'المميزة',sort_low:'السعر: من الأقل إلى الأعلى',sort_high:'السعر: من الأعلى إلى الأقل',
+results:'{n} منتج',empty_t:'لا توجد منتجات تطابق بحثكِ.',empty_b:'مسح التصفية',
+add:'أضيفي إلى السلة',added:'تمت الإضافة إلى السلة',b_new:'جديد',b_best:'الأكثر مبيعًا',
+c_all:'الكل',c_acc:'الإكسسوارات النسائية',c_bag:'الحقائب',c_jew:'المجوهرات',c_wat:'الساعات',c_bea:'منتجات التجميل',c_new:'أحدث المنتجات',c_best:'الأكثر مبيعًا',
+cart_t:'سلتكِ',cart_empty:'سلتكِ فارغة.',cont:'متابعة التسوق',subtotal:'المجموع الفرعي',delivery:'التوصيل',free:'مجاني',total:'الإجمالي',
+checkout_btn:'إتمام الطلب',remove:'حذف',
+co_t:'إتمام الطلب',co_sub:'أدخلي بياناتكِ وأرسلي الطلب إلينا عبر WhatsApp.',co_form:'بيانات التوصيل',
+f_name:'الاسم الكامل',f_phone:'رقم الهاتف',f_wilaya:'الولاية',f_addr:'العنوان',f_note:'ملاحظات (اختياري)',wilaya_ph:'اختاري الولاية',
+send_wa:'إرسال الطلب عبر WhatsApp',wa_hint:'يفتح WhatsApp وطلبكِ جاهز للإرسال. نؤكد معكِ الطلب قبل الشحن.',
+co_summary:'ملخص الطلب',err_req:'يرجى ملء هذا الحقل.',err_phone:'أدخلي رقمًا صحيحًا، مثال: 0555 12 34 56.',err_cart:'أضيفي منتجات إلى السلة أولًا.',
+sent_note:'إذا فُتح WhatsApp، أرسلي الرسالة هناك لتأكيد طلبكِ.',clear_cart:'تفريغ السلة',
+ab_t:'قصتنا',
+ab_p1:'بدأ Belleza Accessoires بفكرة بسيطة: التفصيل المناسب يغيّر كل شيء. لؤلؤة على الأذن، ساعة رفيعة على المعصم، وحقيبة تناسب يومكِ.',
+ab_p2:'نختار قطعًا بألوان الوردي الهادئ والعاجي والبيج والذهبي. سهلة الارتداء وتلفت النظر دون مبالغة.',
+ab_p3:'نراجع كل طلب ونغلّفه قبل أن يغادر، ليصلكِ جاهزًا للارتداء أو للإهداء.',
+v1t:'اختيار بعناية',v1d:'نختار كل قطعة لجودة تشطيبها وراحتها وانسجامها مع بقية إطلالتكِ.',
+v2t:'أسعار عادلة',v2d:'الأناقة يجب ألا تكون بعيدة المنال.',
+v3t:'قريبون منكِ',v3d:'نرد على WhatsApp وInstagram ونتابع كل طلب حتى يصلكِ.',
+ct_t:'اتصلي بنا',ct_sub:'لديكِ سؤال عن قطعة أو طلب؟ راسلينا، يسعدنا مساعدتكِ.',ct_form:'أرسلي لنا رسالة',
+f_msg:'رسالتكِ',ct_send:'إرسال عبر WhatsApp',ct_wa:'WhatsApp',ct_email:'البريد الإلكتروني',ct_social:'تابعينا',
+pol_t:'التوصيل والاستبدال',pol_sub:'سياسة واضحة وبسيطة لتطلبي بثقة.',pol_d_t:'التوصيل',pol_x_t:'الاستبدال',
+d1:'نوصّل إلى جميع الولايات الـ 58.',d2:'رسوم التوصيل: {fee}. مجاني للطلبات فوق {free}.',
+d3:'يستغرق التوصيل عادة من 24 إلى 72 ساعة في الولايات القريبة ومن 3 إلى 7 أيام في بقية الولايات.',
+d4:'نؤكد طلبكِ معكِ عبر WhatsApp قبل الشحن. الدفع عند الاستلام.',
+x1:'يمكنكِ طلب الاستبدال خلال {days} أيام من استلام الطلب.',
+x2:'يجب أن تكون القطعة غير مستعملة وبحالتها الأصلية وفي غلافها.',
+x3:'لا يمكن استبدال منتجات التجميل والأقراط لأسباب صحية.',
+x4:'للبدء، راسلينا على WhatsApp مع تفاصيل الطلب وصورة للقطعة.',
+ft_tag:'مجوهرات وحقائب وساعات وجمال بلمسة ذهبية ناعمة.',ft_links:'استكشفي',ft_follow:'تابعينا',ft_rights:'جميع الحقوق محفوظة.',
+wa_head:'طلب جديد من Belleza Accessoires',wa_name:'الاسم',wa_phone:'الهاتف',wa_wilaya:'الولاية',wa_addr:'العنوان',wa_items:'المنتجات',wa_sub:'المجموع الفرعي',wa_del:'التوصيل',wa_total:'الإجمالي',wa_note:'ملاحظات',
+wa_ct:'رسالة من موقع Belleza Accessoires'}
+};
+const WIL={
+en:['Adrar','Chlef','Laghouat','Oum El Bouaghi','Batna','Béjaïa','Biskra','Béchar','Blida','Bouira','Tamanrasset','Tébessa','Tlemcen','Tiaret','Tizi Ouzou','Alger','Djelfa','Jijel','Sétif','Saïda','Skikda','Sidi Bel Abbès','Annaba','Guelma','Constantine','Médéa','Mostaganem','M’Sila','Mascara','Ouargla','Oran','El Bayadh','Illizi','Bordj Bou Arréridj','Boumerdès','El Tarf','Tindouf','Tissemsilt','El Oued','Khenchela','Souk Ahras','Tipaza','Mila','Aïn Defla','Naâma','Aïn Témouchent','Ghardaïa','Relizane','Timimoun','Bordj Badji Mokhtar','Ouled Djellal','Béni Abbès','In Salah','In Guezzam','Touggourt','Djanet','El M’Ghair','El Meniaa'],
+ar:['أدرار','الشلف','الأغواط','أم البواقي','باتنة','بجاية','بسكرة','بشار','البليدة','البويرة','تمنراست','تبسة','تلمسان','تيارت','تيزي وزو','الجزائر','الجلفة','جيجل','سطيف','سعيدة','سكيكدة','سيدي بلعباس','عنابة','قالمة','قسنطينة','المدية','مستغانم','المسيلة','معسكر','ورقلة','وهران','البيض','إليزي','برج بوعريريج','بومرداس','الطارف','تندوف','تيسمسيلت','الوادي','خنشلة','سوق أهراس','تيبازة','ميلة','عين الدفلى','النعامة','عين تموشنت','غرداية','غليزان','تيميمون','برج باجي مختار','أولاد جلال','بني عباس','عين صالح','عين قزام','تقرت','جانت','المغير','المنيعة']
+};
+
+/* ============ Products ============ */
+const PAL={blush:['#FBE9E7','#F3D3D0'],beige:['#F4EADD','#E8D8C3'],cream:['#FFF6EE','#F6E3D3'],mauve:['#F4E1E6','#E7C3CE'],sand:['#F1E6DA','#DFCBB6']};
+const PRODUCTS=[
+{id:1,cat:'jewelry',type:'earrings',p:2400,new:1,c:{bg:PAL.blush,metal:'gold'},en:'Perla Drop Earrings',ar:'أقراط بيرلا المنسدلة',den:'Gold-tone drops with a soft pearl.',dar:'أقراط ذهبية اللون بلؤلؤة ناعمة تضيء الوجه.'},
+{id:2,cat:'jewelry',type:'necklace',p:3200,best:1,c:{bg:PAL.cream,metal:'gold',a:'#EBB9C4'},en:'Luna Pendant Necklace',ar:'عقد لونا بقلادة',den:'Fine chain with a blush crystal pendant.',dar:'سلسلة رقيقة بقلادة كريستال وردية.'},
+{id:3,cat:'jewelry',type:'ring',p:1900,best:1,c:{bg:PAL.mauve,metal:'gold',a:'#F0B6C4'},en:'Soleil Gem Ring',ar:'خاتم سوليه',den:'Adjustable band with a rose crystal.',dar:'خاتم قابل للتعديل بحجر وردي لامع.'},
+{id:4,cat:'jewelry',type:'bracelet',p:2100,new:1,c:{bg:PAL.beige,metal:'gold',a:'#EBB9C4'},en:'Cleo Pearl Bracelet',ar:'سوار كليو باللؤلؤ',den:'Pearl beads on a gold-tone setting.',dar:'حبات لؤلؤ على إطار ذهبي اللون.'},
+{id:5,cat:'jewelry',type:'necklace',p:4200,old:5000,c:{bg:PAL.blush,metal:'rose',a:'#F6D9C9'},en:'Aurora Layered Necklace',ar:'عقد أورورا متعدد الطبقات',den:'Rose-gold layers for a soft shimmer.',dar:'طبقات روز غولد بلمعان ناعم.'},
+{id:6,cat:'bags',type:'bag',p:6800,new:1,best:1,c:{bg:PAL.cream,metal:'gold',a:'#E9A9B6'},en:'Rosé Mini Top-Handle Bag',ar:'حقيبة روزيه الصغيرة',den:'Structured mini bag with a gold clasp.',dar:'حقيبة صغيرة متينة بإبزيم ذهبي.'},
+{id:7,cat:'bags',type:'clutch',p:4900,c:{bg:PAL.beige,metal:'gold',a:'#F7EFE4'},en:'Ivory Evening Clutch',ar:'كلتش آيفوري للسهرات',den:'Soft clutch with a removable chain.',dar:'كلتش أنيق بسلسلة قابلة للفك.'},
+{id:8,cat:'bags',type:'bag',p:8400,old:9800,c:{bg:PAL.sand,metal:'gold',a:'#D9BF9E'},en:'Beige Everyday Shoulder Bag',ar:'حقيبة كتف بيج يومية',den:'Roomy shoulder bag for work and weekends.',dar:'حقيبة كتف واسعة للعمل ونهاية الأسبوع.'},
+{id:9,cat:'bags',type:'clutch',p:5900,new:1,c:{bg:PAL.mauve,metal:'gold',a:'#F2C4CE'},en:'Blush Crossbody',ar:'حقيبة بلاش كروس',den:'Light crossbody in a calm blush tone.',dar:'حقيبة خفيفة بلون وردي هادئ.'},
+{id:10,cat:'watches',type:'watch',p:9500,best:1,c:{bg:PAL.blush,metal:'gold',a:'#EDBFC8'},en:'Doré Slim Watch',ar:'ساعة دوريه النحيفة',den:'Slim gold case with a blush strap.',dar:'علبة ذهبية رفيعة بحزام وردي.'},
+{id:11,cat:'watches',type:'watch',p:11500,new:1,c:{bg:PAL.cream,metal:'gold',a:'#F7F2EA'},en:'Pearl Dial Watch',ar:'ساعة بميناء لؤلؤي',den:'Ivory face with a soft white strap.',dar:'ميناء عاجي وحزام أبيض ناعم.'},
+{id:12,cat:'watches',type:'watch',p:8900,old:10500,c:{bg:PAL.beige,metal:'rose',a:'#DCC3A6'},en:'Rose Link Watch',ar:'ساعة روز',den:'Rose-gold case with a beige strap.',dar:'علبة روز غولد بحزام بيج.'},
+{id:13,cat:'accessories',type:'hairclip',p:1200,best:1,c:{bg:PAL.mauve,metal:'gold'},en:'Pearl Hair Barrette',ar:'مشبك شعر باللؤلؤ',den:'A barrette studded with pearls.',dar:'مشبك مرصّع بحبات اللؤلؤ.'},
+{id:14,cat:'accessories',type:'hairclip',p:1500,new:1,c:{bg:PAL.cream,metal:'rose'},en:'Gold Hair Clip Set',ar:'طقم مشابك شعر ذهبية',den:'Three clips for everyday styling.',dar:'ثلاثة مشابك لتسريحات يومية.'},
+{id:15,cat:'accessories',type:'bow',p:1300,c:{bg:PAL.blush,metal:'gold',a:'#F1B9C5'},en:'Satin Bow Barrette',ar:'مشبك فيونكة ساتان',den:'A soft satin bow on a gold clip.',dar:'فيونكة ساتان ناعمة على مشبك ذهبي.'},
+{id:16,cat:'beauty',type:'lipstick',p:2300,best:1,c:{bg:PAL.mauve,metal:'gold',a:'#C0566B'},en:'Rose Velvet Lipstick',ar:'أحمر شفاه روز فيلفيت',den:'Creamy matte finish in dusty rose.',dar:'ملمس كريمي مطفي بدرجة الوردي الترابي.'},
+{id:17,cat:'beauty',type:'perfume',p:7500,new:1,c:{bg:PAL.cream,metal:'gold',a:'#F2C9D2'},en:'Belleza Eau de Parfum 50 ml',ar:'عطر بيليزا 50 مل',den:'Floral musk in a gold-capped bottle.',dar:'عطر زهري بمسك في زجاجة بغطاء ذهبي.'},
+{id:18,cat:'beauty',type:'lipstick',p:1800,c:{bg:PAL.sand,metal:'rose',a:'#D9A08F'},en:'Nude Lip Gloss',ar:'ملمّع شفاه نيود',den:'High-shine gloss with a soft nude tint.',dar:'ملمّع لامع بلمسة نيود ناعمة.'}
+];
+
+/* ============ Illustrations (inline SVG, no external images) ============ */
+let uid=0;
+const METAL={gold:['#F2DDA6','#B8924A'],rose:['#F5D5CB','#C48C7E'],silver:['#F7F7F7','#A3A9B2']};
+function art(type,c){
+  const id='g'+(++uid),m=METAL[c.metal||'gold'],a=c.a||'#EBB9C4',M=`url(#${id}m)`,P=`url(#${id}p)`;
+  const defs=`<defs><radialGradient id="${id}l" cx=".25" cy=".15" r=".9"><stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset=".55" stop-color="#fff" stop-opacity="0"/></radialGradient><linearGradient id="${id}b" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${c.bg[0]}"/><stop offset="1" stop-color="${c.bg[1]}"/></linearGradient><linearGradient id="${id}m" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${m[0]}"/><stop offset=".55" stop-color="${m[1]}"/><stop offset="1" stop-color="${m[0]}"/></linearGradient><radialGradient id="${id}p" cx=".35" cy=".3" r=".85"><stop offset="0" stop-color="#fff"/><stop offset=".6" stop-color="#F4EAE5"/><stop offset="1" stop-color="#CDBDB6"/></radialGradient></defs>`;
+  let s='<ellipse cx="100" cy="178" rx="54" ry="6" fill="#3A2A2E" opacity=".08"/>';
+  if(type==='earrings'){
+    s+=[68,132].map(x=>`<path d="M${x} 32a7 7 0 1 1 0 14" fill="none" stroke="${M}" stroke-width="3"/><line x1="${x}" y1="46" x2="${x}" y2="78" stroke="${M}" stroke-width="3"/><circle cx="${x}" cy="78" r="5" fill="${M}"/><circle cx="${x}" cy="108" r="24" fill="${P}"/>`).join('');
+  }else if(type==='necklace'){
+    s+=`<path d="M34 46Q100 196 166 46" fill="none" stroke="${M}" stroke-width="3" stroke-linecap="round"/>`;
+    s+=[.2,.35,.65,.8].map(t=>{const x=(1-t)**2*34+2*(1-t)*t*100+t*t*166,y=(1-t)**2*46+2*(1-t)*t*196+t*t*46;return `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="4.5" fill="${P}"/>`}).join('');
+    s+=`<path d="M100 120l13 17-13 24-13-24z" fill="${a}" stroke="${M}" stroke-width="3" stroke-linejoin="round"/><path d="M100 124l5 13-5 4-5-4z" fill="#fff" opacity=".5"/>`;
+  }else if(type==='ring'){
+    s+=`<circle cx="100" cy="124" r="38" fill="none" stroke="${M}" stroke-width="10"/><path d="M100 46l22 22-22 30-22-30z" fill="${a}" stroke="${M}" stroke-width="3" stroke-linejoin="round"/><path d="M100 52l9 16-9 6-9-6z" fill="#fff" opacity=".5"/>`;
+  }else if(type==='bracelet'){
+    s+=`<ellipse cx="100" cy="104" rx="70" ry="42" fill="none" stroke="${M}" stroke-width="6"/>`;
+    for(let k=0;k<9;k++){const th=(20+k*17.5)*Math.PI/180;s+=`<circle cx="${(100+70*Math.cos(th)).toFixed(1)}" cy="${(104+42*Math.sin(th)).toFixed(1)}" r="8" fill="${P}"/>`}
+    s+=`<circle cx="100" cy="150" r="9" fill="${a}" stroke="${M}" stroke-width="3"/>`;
+  }else if(type==='bag'){
+    s+=`<path d="M70 92C70 34 130 34 130 92" fill="none" stroke="${M}" stroke-width="6" stroke-linecap="round"/><rect x="42" y="88" width="116" height="80" rx="16" fill="${a}"/><path d="M42 104Q100 144 158 104V104Q158 88 142 88H58Q42 88 42 104Z" fill="#000" opacity=".08"/><circle cx="100" cy="124" r="7" fill="${M}"/>`;
+  }else if(type==='clutch'){
+    s+=`<path d="M46 98Q100 8 154 98" fill="none" stroke="${M}" stroke-width="3" stroke-dasharray="6 3"/><rect x="34" y="96" width="132" height="70" rx="14" fill="${a}"/><path d="M34 110Q34 96 48 96H152Q166 96 166 110V120Q100 152 34 120Z" fill="#000" opacity=".08"/><circle cx="100" cy="132" r="7" fill="${M}"/>`;
+  }else if(type==='watch'){
+    s+=`<rect x="80" y="20" width="40" height="62" rx="9" fill="${a}"/><rect x="80" y="118" width="40" height="62" rx="9" fill="${a}"/><circle cx="100" cy="100" r="42" fill="${M}"/><circle cx="100" cy="100" r="33" fill="#FFFCF8"/>`;
+    for(let k=0;k<12;k++){const th=k*Math.PI/6,r1=k%3?28:25,r2=31;s+=`<line x1="${(100+r1*Math.sin(th)).toFixed(1)}" y1="${(100-r1*Math.cos(th)).toFixed(1)}" x2="${(100+r2*Math.sin(th)).toFixed(1)}" y2="${(100-r2*Math.cos(th)).toFixed(1)}" stroke="#3A2A2E" stroke-width="1.6"/>`}
+    s+=`<line x1="100" y1="100" x2="100" y2="78" stroke="#3A2A2E" stroke-width="3" stroke-linecap="round"/><line x1="100" y1="100" x2="116" y2="108" stroke="#3A2A2E" stroke-width="2.4" stroke-linecap="round"/><circle cx="100" cy="100" r="3.5" fill="${M}"/><circle cx="100" cy="148" r="2.5" fill="#000" opacity=".2"/><circle cx="100" cy="160" r="2.5" fill="#000" opacity=".2"/>`;
+  }else if(type==='lipstick'){
+    s+=`<rect x="78" y="124" width="44" height="52" rx="6" fill="${M}"/><rect x="83" y="92" width="34" height="36" rx="3" fill="${m[1]}"/><path d="M87 92V66Q87 54 100 46Q113 54 113 66V92Z" fill="${a}"/><path d="M93 90V64Q94 58 98 54" stroke="#fff" stroke-width="3" opacity=".35" fill="none" stroke-linecap="round"/>`;
+  }else if(type==='perfume'){
+    s+=`<rect x="62" y="84" width="76" height="88" rx="16" fill="${a}" opacity=".55" stroke="${M}" stroke-width="2.5"/><rect x="69" y="112" width="62" height="54" rx="11" fill="${a}" opacity=".7"/><rect x="90" y="66" width="20" height="20" fill="${M}"/><rect x="83" y="42" width="34" height="26" rx="6" fill="${M}"/><rect x="77" y="118" width="46" height="30" rx="3" fill="#FFFAF5" opacity=".92"/><text x="100" y="140" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="20" fill="${m[1]}">B</text>`;
+  }else if(type==='hairclip'){
+    s+=`<rect x="30" y="84" width="140" height="32" rx="16" fill="${M}"/>`+[56,78,100,122,144].map(x=>`<circle cx="${x}" cy="100" r="9.5" fill="${P}"/>`).join('');
+  }else if(type==='bow'){
+    s+=`<rect x="44" y="128" width="112" height="16" rx="8" fill="${M}"/><path d="M100 98C70 56 36 74 46 102C36 132 70 142 100 104Z" fill="${a}"/><path d="M100 98C130 56 164 74 154 102C164 132 130 142 100 104Z" fill="${a}"/><path d="M100 98C70 56 36 74 46 102" fill="none" stroke="#fff" stroke-width="2" opacity=".35"/><rect x="88" y="86" width="24" height="30" rx="10" fill="${a}"/><rect x="88" y="86" width="24" height="30" rx="10" fill="#000" opacity=".08"/>`;
+  }
+  return `<svg class="art" viewBox="0 0 200 200" preserveAspectRatio="xMidYMid slice" role="img" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">${defs}<rect width="200" height="200" fill="url(#${id}b)"/><rect width="200" height="200" fill="url(#${id}l)"/>${s}<path d="M162 34l2.4 6.6L171 43l-6.6 2.4L162 52l-2.4-6.6L153 43l6.6-2.4z" fill="#fff" opacity=".75"/><path d="M36 150l1.6 4.4L42 156l-4.4 1.6L36 162l-1.6-4.4L30 156l4.4-1.6z" fill="#fff" opacity=".6"/></svg>`;
+}
+function logo(){
+  const id='lg'+(++uid);
+  return `<svg viewBox="0 0 48 48" aria-hidden="true"><defs><linearGradient id="${id}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E6C77F"/><stop offset=".6" stop-color="#B8924A"/><stop offset="1" stop-color="#D9B976"/></linearGradient></defs><circle cx="24" cy="27" r="18" fill="none" stroke="url(#${id})" stroke-width="1.5"/><circle cx="24" cy="27" r="14.5" fill="none" stroke="url(#${id})" stroke-width=".6" opacity=".7"/><path d="M24 3l4.6 5.6L24 14l-4.6-5.4z" fill="url(#${id})"/><text x="24" y="36" text-anchor="middle" font-family="'Cormorant Garamond',Georgia,serif" font-size="27" font-style="italic" font-weight="600" fill="url(#${id})">B</text></svg>`;
+}
+const ICON={
+  instagram:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg>',
+  facebook:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.5H16l.5-3h-3V8.7c0-.9.3-1.5 1.6-1.5h1.5V4.5c-.3 0-1.2-.1-2.2-.1-2.3 0-3.9 1.4-3.9 4v2.1H8v3h2.5V21z"/></svg>',
+  tiktok:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 3c.3 2.2 1.6 3.6 3.7 3.8v3a6.6 6.6 0 0 1-3.6-1.1v6.1a5.6 5.6 0 1 1-5.6-5.6c.3 0 .6 0 .9.1v3.1a2.6 2.6 0 1 0 1.7 2.4V3z"/></svg>'
+};
+
+/* ============ State & helpers ============ */
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+let lang=CONFIG.defaultLang,cart={},fav={},F={q:'',cat:'all',price:0,sort:'feat'};
+try{fav=JSON.parse(localStorage.getItem('bz-fav')||'{}')||{};const l=localStorage.getItem('bz-lang');if(l==='ar'||l==='en')lang=l;const c=JSON.parse(localStorage.getItem('bz-cart')||'{}');if(c&&typeof c==='object')cart=c}catch(e){}
+const save=()=>{try{localStorage.setItem('bz-cart',JSON.stringify(cart))}catch(e){}};
+const saveFav=()=>{try{localStorage.setItem('bz-fav',JSON.stringify(fav))}catch(e){}};
+const t=(k,v={})=>(STR[lang][k]??k).replace(/\{(\w+)\}/g,(_,x)=>v[x]??'');
+const fmt=n=>n.toLocaleString('en-US')+' '+t('cur');
+const pname=p=>lang==='ar'?p.ar:p.en,pdesc=p=>lang==='ar'?p.dar:p.den;
+const byId=id=>PRODUCTS.find(p=>p.id===+id);
+const lines=()=>Object.entries(cart).map(([id,q])=>({p:byId(id),q})).filter(l=>l.p&&l.q>0);
+const subtotal=()=>lines().reduce((s,l)=>s+l.p.p*l.q,0);
+const delivery=s=>s===0||s>=CONFIG.freeOver?0:CONFIG.deliveryFee;
+const CATS=[['all','c_all'],['accessories','c_acc'],['bags','c_bag'],['jewelry','c_jew'],['watches','c_wat'],['beauty','c_bea'],['new','c_new'],['best','c_best'],['fav','c_fav']];
+const TILE={jewelry:['necklace',PAL.blush,'gold'],bags:['bag',PAL.cream,'gold'],watches:['watch',PAL.beige,'gold'],accessories:['hairclip',PAL.mauve,'gold'],beauty:['perfume',PAL.sand,'gold']};
+
+/* ============ Rendering ============ */
+const HEART='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5S4 15.2 4 9.6A4.3 4.3 0 0 1 12 7.4a4.3 4.3 0 0 1 8 2.2c0 5.6-8 10.9-8 10.9z"/></svg>';
+function card(p,i=0){
+  const disc=p.old?Math.round((1-p.p/p.old)*100):0;
+  const tag=disc?`<span class="tag sale">-${disc}%</span>`:p.new?`<span class="tag">${t('b_new')}</span>`:p.best?`<span class="tag">${t('b_best')}</span>`:'';
+  return `<article class="card" style="animation-delay:${Math.min(i,8)*0.06}s"><div style="position:relative"><button class="thumb" type="button" data-qv="${p.id}" aria-label="${t('view')}: ${pname(p)}">${art(p.type,p.c)}${tag}<span class="qvbtn">${t('view')}</span></button><button class="heart${fav[p.id]?' on':''}" type="button" data-fav="${p.id}" aria-label="${t('fav_t')}" aria-pressed="${!!fav[p.id]}">${HEART}</button></div><div class="cbody"><h3>${pname(p)}</h3><p>${pdesc(p)}</p><div class="price"><b>${fmt(p.p)}</b>${p.old?`<s>${fmt(p.old)}</s>`:''}</div><button class="btn sm" type="button" data-add="${p.id}">${t('add')}</button></div></article>`;
+}
+function hero(){
+  const f=byId(2),gid='bp'+(++uid);
+  return `<div class="h-frame"></div><div class="h-arch">${art('necklace',{bg:PAL.blush,metal:'gold',a:'#EBB9C4'})}</div>
+  <div class="h-badge"><svg viewBox="0 0 120 120" aria-hidden="true"><defs><path id="${gid}" d="M60 60m-43 0a43 43 0 1 1 86 0a43 43 0 1 1 -86 0"/></defs><circle cx="60" cy="60" r="58" style="fill:var(--surface)"/><g class="spin"><text font-size="10.5" textLength="262" lengthAdjust="spacing" style="fill:var(--gold-d)" font-family="Jost,sans-serif"><textPath href="#${gid}">BELLEZA ACCESSOIRES • BELLEZA •</textPath></text></g><path d="M60 47l8 13-8 13-8-13z" style="fill:var(--gold)"/></svg></div>
+  <div class="h-feat"><div class="ft">${art(f.type,f.c)}</div><div><small>${t('hero_feat')}</small><b>${pname(f)}</b><div style="font-size:.85rem;color:var(--muted)">${fmt(f.p)}</div><button type="button" data-add="${f.id}">${t('add')}</button></div></div>`;
+}
+function renderHome(){
+  $('#gridNew').innerHTML=PRODUCTS.filter(p=>p.new).slice(0,4).map(card).join('');
+  $('#gridBest').innerHTML=PRODUCTS.filter(p=>p.best).slice(0,4).map(card).join('');
+  $('#cats').innerHTML=Object.keys(TILE).map(k=>{const [ty,bg,me]=TILE[k];const lab=t(CATS.find(c=>c[0]===k)[1]);return `<a class="cat" href="#shop" data-go="${k}">${art(ty,{bg,metal:me,a:'#EBB9C4'})}<span>${lab}<i>${t('see_all')}</i></span></a>`}).join('');
+  $('#offerT').textContent=t('offer_t',{free:fmt(CONFIG.freeOver)});
+  $('#annT').innerHTML=t('ann',{free:'<b>'+fmt(CONFIG.freeOver)+'</b>'});
+  $('#p3d').textContent=t('p3d',{days:CONFIG.exchangeDays});
+  const words=['c_jew','c_bag','c_wat','c_acc','c_bea'].map(k=>`<span>${t(k)}</span>`).join('');
+  $('#marq').innerHTML=words+words+words+words;
+  $('#collage').innerHTML=hero();$('#aboutArt').innerHTML=hero();
+}
+function filtered(){
+  const q=F.q.trim().toLowerCase(),rng=[[0,1e9],[0,3000],[3000,6000],[6000,10000],[10000,1e9]][F.price];
+  let r=PRODUCTS.filter(p=>{
+    if(F.cat==='new'&&!p.new)return false;
+    if(F.cat==='best'&&!p.best)return false;
+    if(F.cat==='fav'&&!fav[p.id])return false;
+    if(!['all','new','best','fav'].includes(F.cat)&&p.cat!==F.cat)return false;
+    if(p.p<rng[0]||p.p>=rng[1])return false;
+    if(q&&!(p.en+' '+p.ar+' '+p.den+' '+p.dar).toLowerCase().includes(q))return false;
+    return true});
+  if(F.sort==='low')r.sort((a,b)=>a.p-b.p);else if(F.sort==='high')r.sort((a,b)=>b.p-a.p);
+  return r;
+}
+function renderShop(){
+  $('#chips').innerHTML=CATS.map(([k,l])=>`<button type="button" class="chip${F.cat===k?' on':''}" data-cat="${k}" aria-pressed="${F.cat===k}">${t(l)}</button>`).join('');
+  const r=filtered();
+  $('#gridShop').innerHTML=r.map(card).join('');
+  $('#resCount').textContent=t('results',{n:r.length});
+  $('#shopEmpty').hidden=r.length>0;
+}
+function renderCart(){
+  const L=lines(),n=L.reduce((s,l)=>s+l.q,0),s=subtotal(),d=delivery(s);
+  $('#cartCount').textContent=n;$('#cartCount').hidden=n===0;
+  if(!L.length){
+    $('#dl').innerHTML=`<div class="empty"><h3>${t('cart_empty')}</h3></div>`;
+    $('#df').innerHTML=`<a class="btn" href="#shop" data-close>${t('cont')}</a>`;
+  }else{
+    $('#dl').innerHTML=L.map(({p,q})=>`<div class="line"><div class="t">${art(p.type,p.c)}</div><div><h4>${pname(p)}</h4><small>${fmt(p.p)}</small><div class="qty"><button type="button" data-q="${p.id}:-1" aria-label="-">−</button><span>${q}</span><button type="button" data-q="${p.id}:1" aria-label="+">+</button></div></div><div style="text-align:end"><b style="font-weight:500;font-variant-numeric:tabular-nums">${fmt(p.p*q)}</b><br><button class="rm" type="button" data-q="${p.id}:x">${t('remove')}</button></div></div>`).join('');
+    $('#df').innerHTML=`<div class="row"><span>${t('subtotal')}</span><span>${fmt(s)}</span></div><div class="row"><span>${t('delivery')}</span><span>${d?fmt(d):t('free')}</span></div><div class="row tot"><span>${t('total')}</span><b>${fmt(s+d)}</b></div><a class="btn" href="#checkout" data-close>${t('checkout_btn')}</a>`;
+  }
+  renderSummary();
+}
+function renderSummary(){
+  const L=lines(),s=subtotal(),d=delivery(s);
+  $('#coSum').innerHTML=L.length?L.map(({p,q})=>`<div class="row"><span>${pname(p)} × ${q}</span><span>${fmt(p.p*q)}</span></div>`).join('')+`<div class="row"><span>${t('subtotal')}</span><span>${fmt(s)}</span></div><div class="row"><span>${t('delivery')}</span><span>${d?fmt(d):t('free')}</span></div><div class="row tot"><span>${t('total')}</span><b>${fmt(s+d)}</b></div>`:`<div class="empty"><h3>${t('cart_empty')}</h3><a class="btn ghost" href="#shop">${t('cont')}</a></div>`;
+}
+function renderStatic(){
+  $$('[data-i18n]').forEach(e=>e.textContent=t(e.dataset.i18n));
+  $$('[data-i18n-html]').forEach(e=>e.innerHTML=t(e.dataset.i18nHtml));
+  $$('[data-i18n-ph]').forEach(e=>e.placeholder=t(e.dataset.i18nPh));
+  $$('[data-i18n-aria]').forEach(e=>e.setAttribute('aria-label',t(e.dataset.i18nAria)));
+  $('#langBtn').textContent=t('lang_btn');
+  const w=$('#fWilaya'),cur=w.value;
+  w.innerHTML=`<option value="">${t('wilaya_ph')}</option>`+WIL[lang].map((n,i)=>`<option value="${i+1}">${String(i+1).padStart(2,'0')} · ${n}</option>`).join('');
+  w.value=cur;
+  $('#polD').innerHTML=['d1','d2','d3','d4'].map(k=>`<li>${t(k,{fee:fmt(CONFIG.deliveryFee),free:fmt(CONFIG.freeOver)})}</li>`).join('');
+  $('#polX').innerHTML=['x1','x2','x3','x4'].map(k=>`<li>${t(k,{days:CONFIG.exchangeDays})}</li>`).join('');
+  const soc=['instagram','facebook','tiktok'].map(k=>`<a href="${CONFIG[k]}" target="_blank" rel="noopener noreferrer" aria-label="${k}">${ICON[k]}</a>`).join('');
+  $('#socFoot').innerHTML=soc;$('#socContact').innerHTML=soc;
+  $('#waShow').textContent=CONFIG.whatsappShow;$('#mailShow').textContent=CONFIG.email;
+}
+function renderAll(){renderStatic();renderHome();renderShop();renderCart()}
+function setLang(l){
+  lang=l;try{localStorage.setItem('bz-lang',l)}catch(e){}
+  document.documentElement.lang=l;document.documentElement.dir=l==='ar'?'rtl':'ltr';
+  renderAll();if(!$('#qv').hidden)renderQV();
+}
+
+/* ============ Cart actions ============ */
+let toastT;
+function toast(m){const e=$('#toast');e.textContent=m;e.classList.add('show');clearTimeout(toastT);toastT=setTimeout(()=>e.classList.remove('show'),1800)}
+function add(id){cart[id]=(cart[id]||0)+1;save();renderCart();toast(t('added'))}
+function setQty(id,op){
+  if(op==='x')delete cart[id];else{cart[id]=(cart[id]||0)+ +op;if(cart[id]<=0)delete cart[id]}
+  save();renderCart();
+}
+let qvId=0,qvQty=1;
+function renderQV(){
+  const p=byId(qvId);if(!p)return;
+  const disc=p.old?Math.round((1-p.p/p.old)*100):0;
+  $('#qvBody').innerHTML=`<div class="qv-art">${art(p.type,p.c)}</div><div class="qv-info"><div class="eyebrow">${t(CATS.find(c=>c[0]===p.cat)[1])}</div><h2>${pname(p)}</h2><div class="price" style="margin:0"><b style="font-size:1.3rem">${fmt(p.p)}</b>${p.old?`<s>${fmt(p.old)}</s> <span class="tag sale" style="position:static">-${disc}%</span>`:''}</div><p>${pdesc(p)}</p><div class="qvrow"><div class="qty"><button type="button" data-qvq="-1" aria-label="-">−</button><span>${qvQty}</span><button type="button" data-qvq="1" aria-label="+">+</button></div><button class="btn" type="button" data-qvadd style="flex:1;min-width:170px">${t('add')}</button></div><div class="qvnote">${t('d2',{fee:fmt(CONFIG.deliveryFee),free:fmt(CONFIG.freeOver)})}</div></div>`;
+}
+function openQV(id){qvId=+id;qvQty=1;renderQV();$('#qv').hidden=false;document.body.style.overflow='hidden';$('#qvClose').focus()}
+function closeQV(){const q=$('#qv');if(!q||q.hidden)return;q.hidden=true;document.body.style.overflow=''}
+function openCart(o){document.body.classList.toggle('cart-open',o);$('#drawer').setAttribute('aria-hidden',String(!o));if(o)$('#closeCart').focus()}
+
+/* ============ Routing ============ */
+const PAGES=['home','shop','about','contact','delivery','checkout'];
+let lastPage='';
+function route(){
+  let h=location.hash.slice(1);if(!PAGES.includes(h))h='home';
+  $$('[data-page]').forEach(s=>s.hidden=s.dataset.page!==h);
+  $$('[data-nav]').forEach(a=>a.classList.toggle('on',a.dataset.nav===h));
+  $('#nav').classList.remove('open');openCart(false);closeQV();
+  if(h==='checkout')renderSummary();
+  if(h!==lastPage){window.scrollTo(0,0);lastPage=h}
+}
+
+/* ============ WhatsApp ============ */
+const waUrl=txt=>`https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(txt)}`;
+function setErr(id,msg){const e=$(`[data-err="${id}"]`),i=$('#'+id);if(e)e.textContent=msg||'';if(i)i.classList.toggle('bad',!!msg)}
+function validOrder(){
+  const name=$('#fName').value.trim(),phone=$('#fPhone').value.replace(/[\s.\-()]/g,''),w=$('#fWilaya').value,addr=$('#fAddr').value.trim();
+  let ok=true;
+  const chk=(id,bad,msg)=>{setErr(id,bad?msg:'');if(bad)ok=false};
+  chk('fName',name.length<2,t('err_req'));
+  chk('fPhone',!/^(?:\+?213|0)[567]\d{8}$/.test(phone),t('err_phone'));
+  chk('fWilaya',!w,t('err_req'));
+  chk('fAddr',addr.length<4,t('err_req'));
+  $('#cartErr').textContent=lines().length?'':t('err_cart');
+  if(!lines().length)ok=false;
+  return ok?{name,phone:$('#fPhone').value.trim(),wilaya:WIL[lang][+w-1],addr,note:$('#fNote').value.trim()}:null;
+}
+function buildOrder(o){
+  const s=subtotal(),d=delivery(s);
+  const items=lines().map(({p,q})=>`- ${pname(p)} × ${q} = ${fmt(p.p*q)}`).join('\n');
+  return [`*${t('wa_head')}*`,'',`${t('wa_name')}: ${o.name}`,`${t('wa_phone')}: ${o.phone}`,`${t('wa_wilaya')}: ${o.wilaya}`,`${t('wa_addr')}: ${o.addr}`,'',`${t('wa_items')}:`,items,'',`${t('wa_sub')}: ${fmt(s)}`,`${t('wa_del')}: ${d?fmt(d):t('free')}`,`*${t('wa_total')}: ${fmt(s+d)}*`,o.note?`\n${t('wa_note')}: ${o.note}`:''].join('\n');
+}
+
+/* ============ Events ============ */
+document.addEventListener('click',e=>{
+  const T=e.target.closest.bind(e.target);
+  let b;
+  if(b=T('[data-add]'))return add(b.dataset.add);
+  if(b=T('[data-fav]')){const id=b.dataset.fav;if(fav[id])delete fav[id];else fav[id]=1;saveFav();$$('[data-fav="'+id+'"]').forEach(x=>{x.classList.toggle('on',!!fav[id]);x.setAttribute('aria-pressed',String(!!fav[id]))});if(F.cat==='fav')renderShop();return}
+  if(b=T('[data-qv]'))return openQV(b.dataset.qv);
+  if(T('[data-qvclose]'))return closeQV();
+  if(b=T('[data-qvq]')){qvQty=Math.max(1,qvQty+ +b.dataset.qvq);return renderQV()}
+  if(T('[data-qvadd]')){cart[qvId]=(cart[qvId]||0)+qvQty;save();renderCart();toast(t('added'));return closeQV()}
+  if(b=T('[data-q]')){const [id,op]=b.dataset.q.split(':');return setQty(id,op)}
+  if(b=T('[data-cat]')){F.cat=b.dataset.cat;return renderShop()}
+  if(b=T('[data-go]')){F.cat=b.dataset.go;F.q='';F.price=0;$('#q').value='';$('#price').value='0';renderShop();return}
+  if(T('[data-close]'))openCart(false);
+});
+$('#cartBtn').onclick=()=>openCart(true);
+$('#closeCart').onclick=()=>openCart(false);
+$('#veil').onclick=()=>openCart(false);
+$('#burger').onclick=()=>$('#nav').classList.toggle('open');
+$('#langBtn').onclick=()=>setLang(lang==='ar'?'en':'ar');
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){openCart(false);closeQV()}});
+$('#q').oninput=e=>{F.q=e.target.value;renderShop()};
+$('#price').onchange=e=>{F.price=+e.target.value;renderShop()};
+$('#sort').onchange=e=>{F.sort=e.target.value;renderShop()};
+$('#clearF').onclick=()=>{F={q:'',cat:'all',price:0,sort:'feat'};$('#q').value='';$('#price').value='0';$('#sort').value='feat';renderShop()};
+$('#coForm').addEventListener('submit',e=>e.preventDefault());
+$('#ctForm').addEventListener('submit',e=>e.preventDefault());
+$('#waBtn').addEventListener('click',e=>{
+  const o=validOrder();
+  if(!o){e.preventDefault();const bad=$('#coForm .bad');if(bad)bad.focus();return}
+  $('#waBtn').href=waUrl(buildOrder(o));
+  $('#sentNote').hidden=false;
+});
+$('#clearCart').onclick=()=>{cart={};save();renderCart();$('#sentNote').hidden=true;location.hash='#shop'};
+$('#ctBtn').addEventListener('click',e=>{
+  const n=$('#cName').value.trim(),m=$('#cMsg').value.trim();
+  setErr('cName',n.length<2?t('err_req'):'');setErr('cMsg',m.length<2?t('err_req'):'');
+  if(n.length<2||m.length<2){e.preventDefault();return}
+  $('#ctBtn').href=waUrl(`*${t('wa_ct')}*\n\n${t('wa_name')}: ${n}\n\n${m}`);
+});
+['fName','fPhone','fWilaya','fAddr'].forEach(id=>$('#'+id).addEventListener('input',()=>setErr(id,'')));
+window.addEventListener('hashchange',route);
+
+/* ============ Init ============ */
+$('#logo1').innerHTML=logo();$('#logo2').innerHTML=logo();
+$('#yr').textContent=new Date().getFullYear();
+document.documentElement.lang=lang;document.documentElement.dir=lang==='ar'?'rtl':'ltr';
+renderAll();route();
+</script>
+
+</html>
